@@ -20,9 +20,22 @@
                     ?>
                     
                     Bienvenue {{$prenom}} {{$nom}} !
-                    <button class="">
-                        <a href="{{ route('visiteur.users.index')}}">Gérer vos visites</a>
-                    </button>
+                    <br>
+                    <br>
+                    @hasrole('visiteur_medicaux')
+                    <a href="{{ route('visiteur.users.index')}}">
+                        <button type="button" class="btn btn-primary" value="on">Gérer vos visites</button>
+                    </a>
+                    @endhasrole
+                    @hasrole('admin')
+                    <a href="{{ route('admin.users.index')}}">
+                        <button type="button" class="btn btn-primary" value="on">Gérer les visiteurs medicaux</button>
+                    </a>
+                    <a href="{{ route('admin.visites.create')}}">
+                        <button type="button" class="btn btn-success" value="on">Ajouter une visite</button>
+                    </a>
+
+                    @endhasrole
                 </div>
             </div>
         </div>
