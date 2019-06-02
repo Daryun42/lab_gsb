@@ -1,7 +1,5 @@
 @extends('layouts.app')
-<!-- <?php $post = '123132'?> -->
 @section('content')
-<!-- @section('dynamicPageTitle', $post->title) -->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
