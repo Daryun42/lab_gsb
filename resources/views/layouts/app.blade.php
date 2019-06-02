@@ -35,20 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
 
-                    @hasrole('admin')
-                    <ul class="navbar-nav mr-auto">
-                        <a href="{{ route('admin.users.index')}}">Gérer les visiteurs medicaux</a>
-                    </ul>
                     
-                    <ul class="navbar-nav mr-auto">
-                        <a href="{{ route('admin.visites.create')}}">Ajouter une visite</a>
-                    </ul>
-                    @endhasrole
-                    @hasrole('visiteur_medicaux')
-                    <ul class="navbar-nav mr-auto">
-                        <a href="{{ route('visiteur.users.index')}}">Gérer les visites</a>
-                    </ul>
-                    @endhasrole
 
 
 
@@ -59,7 +46,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
                             </li>
                             
                         @else
@@ -72,6 +59,23 @@
                                     <a class="dropdown-item" href="{{ url('/home') }}">
                                         {{ __('Accueil') }}
                                     </a>
+
+
+                                    @hasrole('admin')
+                                        <a class="dropdown-item" href="{{ route('admin.users.index')}}">
+                                            {{ __('Gérer les visiteurs medicaux') }}
+                                        </a>
+
+                                        <a class="dropdown-item" href="{{ route('admin.visites.create')}}">
+                                            {{ __('Ajouter une visite') }}
+                                        </a>
+                                    @endhasrole
+                                    @hasrole('visiteur_medicaux')
+
+                                        <a class="dropdown-item" href="{{ route('visiteur.users.index')}}">
+                                            {{ __('Gérer mes visites') }}
+                                        </a>
+                                    @endhasrole
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
