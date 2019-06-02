@@ -35,23 +35,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
 
-                    @guest
-
-                    @else
+                    @hasrole('admin')
                     <ul class="navbar-nav mr-auto">
                         <a href="{{ route('admin.users.index')}}">Gérer les visiteurs medicaux</a>
                     </ul>
-
+                    
                     <ul class="navbar-nav mr-auto">
                         <a href="{{ route('admin.visites.create')}}">Ajouter une visite</a>
                     </ul>
-
+                    @endhasrole
+                    @hasrole('visiteur_medicaux')
                     <ul class="navbar-nav mr-auto">
                         <a href="{{ route('visiteur.users.index')}}">Gérer les visites</a>
                     </ul>
-                    @endguest
-
-
+                    @endhasrole
 
 
 

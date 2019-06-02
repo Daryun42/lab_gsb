@@ -13,12 +13,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <?php $visiteur = auth()->user();?>
                     <?php 
+                        $visiteur = auth()->user();
                         $nom = $visiteur->nom;
                         $prenom = $visiteur->prenom; 
                     ?>
+                    
                     Bienvenue {{$prenom}} {{$nom}} !
+                    <button class="">
+                        <a href="{{ route('visiteur.users.index')}}">Gérer vos visites</a>
+                    </button>
                 </div>
             </div>
         </div>
