@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Visiteur;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Collection;
 use App\User;
 use App\Role;
 use App\Visite;
@@ -21,7 +22,7 @@ class VisiteurController extends Controller
     public function index()
     {
         // return view('visiteur.visites.index')->with('visites', Visite::all());
-        return view('visiteur.visites.index')->with(['visites'=> Visite::all(), 'praticiens' => Praticien::all(), 'echantillons' => Echantillon::all(),'medicaments' => Medicament::all()]);
+        return view('visiteur.visites.index')->with(['visites'=> Visite::paginate(5), 'praticiens' => Praticien::all(), 'echantillons' => Echantillon::all(),'medicaments' => Medicament::all()]);
     }
 
 

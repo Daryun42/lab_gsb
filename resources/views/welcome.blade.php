@@ -71,7 +71,6 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-
                     @endauth
                 </div>
             @endif
@@ -80,10 +79,17 @@
                 <div class="title m-b-md">
                     Lab GSB
                 </div>
-
-                <div class="links">
-                    <a href="{{ route('login') }}">Login</a>
-                </div>
+                @if (Route::has('login'))
+                        @auth
+                            <div class="links">
+                                <a href="{{ url('/home') }}">Accueil</a>
+                            </div>
+                        @else
+                            <div class="links">
+                                <a href="{{ route('login') }}">Login</a>
+                            </div>
+                        @endauth
+                @endif
             </div>
         </div>
     </body>

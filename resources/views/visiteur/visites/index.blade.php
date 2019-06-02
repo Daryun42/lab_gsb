@@ -8,7 +8,9 @@
                 <div class="card-header">Gérer les visites</div>
 
                 <div class="card-body">
+                
                     <table class="table">
+                    
                         <thead>
                             <tr>
                                 <th scope="col">Numéro de la visite</th>
@@ -132,6 +134,7 @@
                             
                         </tbody>
                     </table>
+                    
                 </div>
             </div>
         </div>
