@@ -35,6 +35,5 @@ Route::namespace('Visiteur')->prefix('visiteur')->middleware(['auth','auth.visit
     Route::resource('/users', 'VisiteurController');
 });
 Route::namespace('Visiteur')->prefix('visiteur')->middleware(['auth','auth.visiteur'])->name('visiteur.')->group(function(){
-    Route::View('/praticiens', 'visiteur.praticiens.index');
+    Route::resource('/praticiens', 'PraticienController');
 });
-

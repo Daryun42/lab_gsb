@@ -58,10 +58,8 @@
                                 @foreach($praticiens as $praticien)
                                 <?php $idPraticien = $visite->idPraticien;?>
                                     @if($praticien->idPraticien == $idPraticien)
-                                        <!-- <td><a href="{{route('visiteur.users.edit', $visite['idVisite'])}}">{{ $praticien->nom }} {{ $praticien->prenom }}</a></td> -->
-                                        <td><a href="">{{ $praticien->nom }} {{ $praticien->prenom }}</a></td>
+                                        <td><a href="{{route('visiteur.praticiens.index', $praticien['idPraticien'])}}">{{ $praticien->nom }} {{ $praticien->prenom }}</a></td>
 
-                                        <!-- return view('visiteur.visites.index')->with(['visites'=> Visite::all() -->
                                     @endif
                                 @endforeach
 
