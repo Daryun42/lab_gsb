@@ -14,11 +14,11 @@ class EchantillonsTableSeeder extends Seeder
         Echantillon::truncate();
         Echantillon::create([
             'idMedicament' => '1', 
-            'quantite' => '6', 
+            'quantite' => '-1', 
         ]);
         Echantillon::create([
-            'idMedicament' => '1', 
-            'quantite' => '2', 
+            'idMedicament' => '2', 
+            'quantite' => '-1', 
         ]);
     }
 }

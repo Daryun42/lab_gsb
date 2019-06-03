@@ -19,5 +19,12 @@ class PraticienTableSeeder extends Seeder
             'cpostal' => '30000',
             'rue' => '12 Rue du Cheval Vert',
         ]);
+        Praticien::create([
+            'nom' => 'Marc', 
+            'prenom' => 'Polu', 
+            'ville' => 'NIMES',
+            'cpostal' => '30900',
+            'rue' => '8 Rue du Gateau Ecarlate',
+        ]);
     }
 }

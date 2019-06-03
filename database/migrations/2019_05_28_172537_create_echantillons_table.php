@@ -15,9 +15,9 @@ class CreateEchantillonsTable extends Migration
     {
         Schema::create('echantillons', function (Blueprint $table) {
             $table->bigIncrements('idEchantillon');
-            $table->integer('idMedicament')->unsigned();
+            $table->integer('idMedicament')->unsigned()->nullable();
             $table->foreign('idMedicament')->references('idMedicament')->on('medicaments');
-            $table->integer('quantite');
+            $table->integer('quantite')->nullable();
         });
     }
 

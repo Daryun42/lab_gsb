@@ -22,13 +22,24 @@ class VisitesTableSeeder extends Seeder
             'idPraticien' => '1',
             'idVisiteur' => '2',
         ]);
-        // Visite::create([
-        //     'dateVisite' => \Carbon\Carbon::createFromDate('2019-06-02 15:30:00')->toDateTimeString(), 
-        //     'compteRendu' => 'Test du compte rendu 2.', 
-        //     'idEchantillon' => '2',
-        //     'idPraticien' => '1',
-        //     'idVisiteur' => '3',
-        // ]);
+        Visite::create([
+            'status' => NULL, 
+            'jourVisite' => \Carbon\Carbon::createFromDate('2019-06-07')->toDateString(),
+            'heureVisite' => \Carbon\Carbon::createFromTime(12,30)->toTimeString(),
+            'compteRendu' => NULL, 
+            'idEchantillon' => '1',
+            'idPraticien' => '2',
+            'idVisiteur' => '2',
+        ]);
+        Visite::create([
+            'status' => NULL, 
+            'jourVisite' => \Carbon\Carbon::createFromDate('2019-06-08')->toDateString(),
+            'heureVisite' => \Carbon\Carbon::createFromTime(10,20)->toTimeString(),
+            'compteRendu' => NULL, 
+            'idEchantillon' => '2',
+            'idPraticien' => '2',
+            'idVisiteur' => '3',
+        ]);
 
     } 
 }

@@ -16,5 +16,9 @@ class MedicamentsTableSeeder extends Seeder
             'nomMedicament' => 'Doliprane', 
             'prixEchantillon' => '1.70', 
         ]);
+        Medicament::create([
+            'nomMedicament' => 'Efferalgan', 
+            'prixEchantillon' => '1.30', 
+        ]);
     }
 }
